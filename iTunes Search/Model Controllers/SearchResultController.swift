@@ -51,7 +51,7 @@ class SearchResultController {
     var searchResults: [SearchResult] = []
 }
 
-
+//What could we test for?
 //Make sure we are decoding correctly
 //Test that it does something with URL
 //Check that it generates the correct URL
