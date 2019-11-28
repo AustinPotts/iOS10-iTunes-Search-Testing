@@ -10,6 +10,12 @@ import Foundation
 
 class SearchResultController {
     
+    //What are our dependencies?
+    // 1. Base URL
+    // 2. Search Term & Result Type being Passed in (Query Items)
+    // 3. Set Up Model Correctly with proper Coding Keys (Decoder)
+    // 4> URL Session.shared -Singleton-
+    
     func performSearch(for searchTerm: String, resultType: ResultType, completion: @escaping () -> Void) {
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
@@ -44,3 +50,9 @@ class SearchResultController {
     let baseURL = URL(string: "https://itunes.apple.com/search")!
     var searchResults: [SearchResult] = []
 }
+
+
+//Make sure we are decoding correctly
+//Test that it does something with URL
+//Check that it generates the correct URL
+//Make sure its working even without internet (Mocking)
