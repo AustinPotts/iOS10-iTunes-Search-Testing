@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		454CB0FD23903EAF00937E4C /* iTunes_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454CB0FC23903EAF00937E4C /* iTunes_SearchTests.swift */; };
+		454CB10623904B2200937E4C /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454CB10523904B2200937E4C /* NetworkDataLoader.swift */; };
 		45A3647E237F38FD005EBAD4 /* iTunes_SearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A3647D237F38FD005EBAD4 /* iTunes_SearchUITests.swift */; };
 		46BF022B2117D59500A24DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BF022A2117D59500A24DE5 /* AppDelegate.swift */; };
 		46BF02302117D59500A24DE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BF022E2117D59500A24DE5 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		454CB0FA23903EAF00937E4C /* iTunes SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iTunes SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		454CB0FC23903EAF00937E4C /* iTunes_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchTests.swift; sourceTree = "<group>"; };
 		454CB0FE23903EAF00937E4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		454CB10523904B2200937E4C /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
 		45A3647B237F38FD005EBAD4 /* iTunes SearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iTunes SearchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A3647D237F38FD005EBAD4 /* iTunes_SearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunes_SearchUITests.swift; sourceTree = "<group>"; };
 		45A3647F237F38FD005EBAD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 			path = "iTunes SearchTests";
 			sourceTree = "<group>";
 		};
+		454CB10423904B0900937E4C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				454CB10523904B2200937E4C /* NetworkDataLoader.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		45A3647C237F38FD005EBAD4 /* iTunes SearchUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		46BF02292117D59500A24DE5 /* iTunes Search */ = {
 			isa = PBXGroup;
 			children = (
+				454CB10423904B0900937E4C /* Helpers */,
 				46BF024A2117E4E400A24DE5 /* Models */,
 				46BF024C2117E4F400A24DE5 /* Model Controllers */,
 				46BF02492117E4DF00A24DE5 /* View Controllers */,
@@ -330,6 +341,7 @@
 				46BF02472117E37000A24DE5 /* HTTPMethod.swift in Sources */,
 				46BF02432117E01600A24DE5 /* ItunesSearchTableViewController.swift in Sources */,
 				46BF023F2117D8FB00A24DE5 /* SearchResult.swift in Sources */,
+				454CB10623904B2200937E4C /* NetworkDataLoader.swift in Sources */,
 				46BF022B2117D59500A24DE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
