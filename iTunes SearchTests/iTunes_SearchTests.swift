@@ -70,5 +70,24 @@ class iTunes_SearchTests: XCTestCase {
         
     }
     
+    func testForNoData(){
+        
+        let mock = MockDataLoader()
+        mock.data = badResultsData
+        let controller = SearchResultController(dataLoader: mock)
+        
+        let resultRexpectation = expectation(description: "Wait for search results")
+        
+        controller.performSearch(for: "abcdefg", resultType: .software) {
+            resultRexpectation.fulfill()
+        }
+        
+        wait(for: [resultRexpectation], timeout: 2)
+        XCTAssertTrue(controller.searchResults.count == 0, "Expecting no results for abcdefg")
+        XCTAssertNil(controller.error)
+        
+    }
+    
+    
     
 }

@@ -42,3 +42,17 @@ let badResultsData = """
   ]
 
 """.data(using: .utf8)!
+
+
+let noResultsData = """
+
+{
+   "resultCount": 0,
+   "results" []
+
+
+}
+
+
+
+""".data(using: .utf8)!
