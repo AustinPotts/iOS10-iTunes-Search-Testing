@@ -25,3 +25,20 @@ let goodResultsData = """
   ]
 }
 """.data(using: .utf8)! //Converts the JSON string into JSON data
+
+
+let badResultsData = """
+{
+  "resultCount": 2,
+  "results": [
+    {
+      "trackName": "GarageBand",
+      "artistName": "Apple",
+    },
+    {
+         "trackName": "Shortcut: GarageBand Edition",
+         "artistName": "Make Keroles",
+    }
+  ]
+
+""".data(using: .utf8)!
