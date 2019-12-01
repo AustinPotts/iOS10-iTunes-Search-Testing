@@ -24,8 +24,14 @@ import XCTest
 
 class iTunes_SearchTests: XCTestCase {
 
+   
+    
     func testForSomeResults(){
-        let controller = SearchResultController()
+        let mock = MockDataLoader()
+        mock.data = goodResultsData
+        
+        //The real app is always going to use URL session.shared, but the test will use this mock data
+        let controller = SearchResultController(dataLoader: mock)
         
         //Create the expectation
         let resultsExpectation = expectation(description: "wait for results")
@@ -37,9 +43,11 @@ class iTunes_SearchTests: XCTestCase {
         
         //Wait for the expectation
         wait(for: [resultsExpectation], timeout: 2)
+        //Now check results
         
-        XCTAssertTrue(controller.searchResults.count > 0, "Expecting atleast one result for garage band")
-        
+        XCTAssertTrue(controller.searchResults.count == 2, "Expecting 2 results for GarageBand")
+        XCTAssertEqual("GarageBand", controller.searchResults[0].title)
+        XCTAssertEqual("Apple", controller.searchResults[0].artist)
     }
 
 }

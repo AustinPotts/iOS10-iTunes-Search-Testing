@@ -9,7 +9,7 @@
 import Foundation
 
 
-let goodResults = """
+let goodResultsData = """
 
 {
   "resultCount": 2,
