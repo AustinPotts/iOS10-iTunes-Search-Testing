@@ -73,7 +73,7 @@ class iTunes_SearchTests: XCTestCase {
     func testForNoData(){
         
         let mock = MockDataLoader()
-        mock.data = badResultsData
+        mock.data = noResultsData
         let controller = SearchResultController(dataLoader: mock)
         
         let resultRexpectation = expectation(description: "Wait for search results")
