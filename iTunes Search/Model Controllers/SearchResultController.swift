@@ -10,6 +10,16 @@ import Foundation
 
 class SearchResultController {
     
+    init(dataLoader: NetworkDataLoader = URLSession.shared){
+        self.dataLoader = dataLoader
+    }
+    
+    //MARK: - Properties
+      let dataLoader: NetworkDataLoader
+      let baseURL = URL(string: "https://itunes.apple.com/search")!
+      var searchResults: [SearchResult] = []
+    
+    
     //What are our dependencies?
     // 1. Base URL
     // 2. Search Term & Result Type being Passed in (Query Items)
@@ -29,7 +39,7 @@ class SearchResultController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.get.rawValue
         
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, _, error) in
+        self.dataLoader.loadData(with: request) { (data, error) in
             
             if let error = error { NSLog("Error fetching data: \(error)") }
             guard let data = data else { completion(); return }
@@ -44,11 +54,10 @@ class SearchResultController {
             
             completion()
         }
-        dataTask.resume()
+        
     }
     
-    let baseURL = URL(string: "https://itunes.apple.com/search")!
-    var searchResults: [SearchResult] = []
+  
 }
 
 //What could we test for?
